@@ -1,4 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
+const fs = require("fs")
+const privateKey = fs.readFileSync(".secret").toString()
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -9,7 +11,7 @@ module.exports = {
     rinkeby: {
       url: 'https://eth-rinkeby.alchemyapi.io/v2/6LkCbnrTC4-OnQEUigpx44Pfqm6Dxhg0',
       accounts: [
-        '52b0c3c27ff5ce1a152a338daaa44115e05d059ff404090e86985b125ab31485'
+        privateKey
       ],
     },
   },
